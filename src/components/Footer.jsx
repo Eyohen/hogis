@@ -1,86 +1,62 @@
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
-import twitter from '../assets/twitter.png';
-import facebook from '../assets/facebook.png';
-import instagram from '../assets/instagram.png';
+import { Instagram, Facebook, Twitter, MapPin, Phone, Mail } from 'lucide-react';
+import { HOTELS } from '../data/hotels';
 
-
-function Footer() {
-  const currentYear = new Date().getFullYear();
-
+export default function Footer() {
   return (
-    <footer className="bg-[#F3F1E0]  px-9">
-      <div className="container-custom py-8">
-        <div className="flex flex-col md:flex-row justify-between">
-        
-          <div className='pt-12'>
-            <img src={logo} className='w-32'/>
-
-            <div className='flex flex-col md:flex-row gap-y-2 md:gap-y-0 md:gap-x-4 pt-9'>
-              <img src={twitter} className='w-24 md:w-0 md:h-12 ' />
-              <img src={facebook} className='w-24 md:w-0 md:h-12'/>
-              <img src={instagram} className='w-24 md:w-0 md:h-12'/>
-
-            </div>
-           
-          </div>
-
-          {/* Gamedey */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Gamedey</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/" className="text-gray-500 hover:text-white">
-                  Legal Conditions
-                </Link>
-              </li>
-              <li>
-                <Link to="/products" className="text-gray-500 hover:text-white">
-                  Privacy Policy
-                </Link>
-              </li>
-                 <li>
-                <Link to="/products" className="text-gray-500 hover:text-white">
-                  Cookie Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Discover Gamedey */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Discover Gamedey</h3>
-           <ul className="space-y-2">
-              <li>
-                <Link to="/" className="text-gray-500 hover:text-white">
-                  Discover Facilities
-                </Link>
-              </li>
-              <li>
-                <Link to="/products" className="text-gray-500 hover:text-white">
-                  Discover Coach
-                </Link>
-              </li>
-                 <li>
-                <Link to="/products" className="text-gray-500 hover:text-white">
-                  Become a Coach
-                </Link>
-              </li>
-                     <li>
-                <Link to="/products" className="text-gray-500 hover:text-white">
-                  List your Facilities
-                </Link>
-              </li>
-            </ul>
+    <footer className="bg-charcoal-950 text-cream-100">
+      <div className="container-page py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <p className="font-display text-2xl">
+            Hogis <span className="text-gold-400">Group</span>
+          </p>
+          <p className="mt-4 text-sm text-cream-100/60 leading-relaxed">
+            Three hotels, one standard of hospitality — plus the city&rsquo;s favorite cinema, at Hogis Royale.
+          </p>
+          <div className="mt-6 flex gap-4">
+            <Instagram className="h-5 w-5 text-cream-100/60 hover:text-gold-400 cursor-pointer transition-colors" />
+            <Facebook className="h-5 w-5 text-cream-100/60 hover:text-gold-400 cursor-pointer transition-colors" />
+            <Twitter className="h-5 w-5 text-cream-100/60 hover:text-gold-400 cursor-pointer transition-colors" />
           </div>
         </div>
 
+        <div>
+          <p className="text-xs uppercase tracking-wider text-gold-400 mb-4">Our Hotels</p>
+          <ul className="space-y-3 text-sm text-cream-100/70">
+            {HOTELS.map((h) => (
+              <li key={h.slug}>
+                <Link to={`/hotels/${h.slug}`} className="hover:text-cream-50 transition-colors">
+                  {h.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          <p className='text-center'>&copy; {currentYear} Gamedey. All rights reserved.</p>
-      
+        <div>
+          <p className="text-xs uppercase tracking-wider text-gold-400 mb-4">Explore</p>
+          <ul className="space-y-3 text-sm text-cream-100/70">
+            <li><Link to="/cinema" className="hover:text-cream-50 transition-colors">Cinema</Link></li>
+            <li><Link to="/about" className="hover:text-cream-50 transition-colors">About Us</Link></li>
+            <li><Link to="/contact" className="hover:text-cream-50 transition-colors">Contact</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <p className="text-xs uppercase tracking-wider text-gold-400 mb-4">Get in touch</p>
+          <ul className="space-y-3 text-sm text-cream-100/70">
+            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0" /> Calabar, Nigeria</li>
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0" /> +234 800 000 0000</li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4 shrink-0" /> hello@hogisgroup.com</li>
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-cream-100/10">
+        <div className="container-page py-6 text-xs text-cream-100/40 flex flex-col sm:flex-row justify-between gap-2">
+          <p>&copy; {new Date().getFullYear()} Hogis Group. All rights reserved.</p>
+          <p>Booking flows shown are a demonstration and do not process real payments.</p>
+        </div>
       </div>
     </footer>
   );
 }
-
-export default Footer;
