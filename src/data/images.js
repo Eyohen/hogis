@@ -32,4 +32,13 @@ export const IMAGES = {
   banquetHall: img('1440404653325-ab127d49abc1'),
   gamesArcade: img('1550966871-3ed3cdb5ed0c'),
   gamesArcadeAlt: img('1519167758481-83f550bb49b3'),
+
+  // Movie poster photography (real photos, not fabricated posters — these
+  // are original fictional titles, so we avoid implying any real film).
+  posterAction: img('1516450360452-9312f5e86fc7', 900), // concert crowd, stage lights
+  posterDrama: img('1533105079780-92b9be482077', 900), // coastal cliffside town
+  posterSciFi: img('1500462918059-b1a0cb512f1d', 900), // neon corridor
+  posterComedy: img('1513151233558-d860c5398176', 900), // confetti burst
+  posterHorror: img('1508921912186-1d1a45ebb3c1', 900), // figure on misty forest road
+  posterFantasy: img('1441974231531-c6227db76b6e', 900), // sunlit forest path
 };

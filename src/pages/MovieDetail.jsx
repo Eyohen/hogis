@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Clock, ArrowRight } from 'lucide-react';
-import { getMovieById } from '../data/movies';
+import { getMovieById, TICKET_PRICE } from '../data/movies';
 import { getShowtimesForMovie, dateKey } from '../data/showtimes';
 import { formatCurrency } from '../lib/format';
 import DateStrip from '../components/booking/DateStrip';
@@ -37,7 +37,7 @@ export default function MovieDetail() {
           <div className="flex items-center gap-4 text-sm text-stone-500 mt-3">
             <span className="flex items-center gap-1"><Clock className="h-4 w-4" /> {movie.duration} min</span>
             <span className="border border-stone-300 rounded px-1.5 py-0.5 text-xs">{movie.rating}</span>
-            <span>{formatCurrency(movie.ticketPrice)} / ticket</span>
+            <span>{formatCurrency(TICKET_PRICE)} / ticket</span>
           </div>
           <p className="mt-6 text-stone-600 leading-relaxed max-w-xl">{movie.synopsis}</p>
 

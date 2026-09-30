@@ -9,6 +9,7 @@ const initialState = (movie, initialDate, initialShowtime) => ({
   date: initialDate || new Date(),
   showtime: initialShowtime || null,
   selectedSeats: [],
+  refreshments: {},
   guest: { name: '', email: '', phone: '' },
   card: { number: '', name: '', expiry: '', cvv: '', flip: false },
   submitting: false,
@@ -29,6 +30,12 @@ function reducer(state, action) {
           ? state.selectedSeats.filter((s) => s !== action.payload)
           : [...state.selectedSeats, action.payload],
       };
+    }
+    case 'SET_REFRESHMENT_QTY': {
+      const next = { ...state.refreshments };
+      if (action.qty > 0) next[action.itemId] = action.qty;
+      else delete next[action.itemId];
+      return { ...state, refreshments: next };
     }
     case 'SET_GUEST_FIELD':
       return { ...state, guest: { ...state.guest, [action.field]: action.value } };
