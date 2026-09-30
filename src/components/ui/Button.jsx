@@ -2,6 +2,7 @@ import { Loader2 } from 'lucide-react';
 
 const VARIANTS = {
   primary: 'bg-emerald-900 text-cream-50 hover:bg-emerald-800',
+  solid: 'bg-emerald-900 text-cream-50',
   gold: 'bg-gold-500 text-charcoal-950 hover:bg-gold-400',
   outline: 'border border-emerald-900 text-emerald-900 hover:bg-emerald-900 hover:text-cream-50',
   ghost: 'text-emerald-900 hover:bg-emerald-900/5',

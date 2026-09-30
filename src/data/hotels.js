@@ -1,5 +1,6 @@
 import { addDays, format } from 'date-fns';
 import { IMAGES } from './images';
+import { hashString, mulberry32 } from '../lib/prng';
 
 export const HOTELS = [
   {
@@ -135,23 +136,12 @@ export const HOTELS = [
 export const getHotelBySlug = (slug) => HOTELS.find((h) => h.slug === slug);
 export const getRoomById = (hotel, roomId) => hotel?.rooms.find((r) => r.id === roomId);
 
-function hashString(str) {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = (hash << 5) - hash + str.charCodeAt(i);
-    hash |= 0;
-  }
-  return Math.abs(hash);
-}
-
 // A handful of deterministic "already booked" dates over the next 60 days, per room.
 export function getUnavailableDates(roomId) {
-  const seed = hashString(roomId);
-  const dates = [];
-  let cursor = seed;
-  for (let i = 0; i < 6; i++) {
-    cursor = (cursor * 1103515245 + 12345) & 0x7fffffff;
-    dates.push(format(addDays(new Date(), 2 + (cursor % 55)), 'yyyy-MM-dd'));
+  const rand = mulberry32(hashString(roomId));
+  const dates = new Set();
+  for (let attempts = 0; dates.size < 6 && attempts < 100; attempts++) {
+    dates.add(format(addDays(new Date(), 2 + Math.floor(rand() * 55)), 'yyyy-MM-dd'));
   }
-  return dates;
+  return [...dates];
 }

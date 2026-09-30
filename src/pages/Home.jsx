@@ -38,7 +38,7 @@ export default function Home() {
               <Button as={Link} to="/hotels" variant="gold" size="lg">
                 Book a Room <ArrowRight className="h-4 w-4" />
               </Button>
-              <Button as={Link} to="/cinema" variant="outline" size="lg" className="border-cream-50 text-cream-50 hover:bg-cream-50 hover:text-charcoal-950">
+              <Button as={Link} to="/cinema" variant="solid" size="lg">
                 Book Cinema Tickets <Clapperboard className="h-4 w-4" />
               </Button>
             </div>
