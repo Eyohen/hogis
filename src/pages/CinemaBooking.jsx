@@ -12,7 +12,7 @@ import { CinemaBookingProvider, useCinemaBooking } from '../context/CinemaBookin
 import StepIndicator from '../components/ui/StepIndicator';
 import DateStrip from '../components/booking/DateStrip';
 import SeatMap from '../components/booking/SeatMap';
-import MockPaymentCard from '../components/booking/MockPaymentCard';
+import PaystackCheckout from '../components/booking/PaystackCheckout';
 import BookingConfirmation from '../components/booking/BookingConfirmation';
 import MoviePoster from '../components/MoviePoster';
 import Button from '../components/ui/Button';
@@ -185,25 +185,23 @@ function GuestDetailsStep() {
   );
 }
 
-function PaymentStep() {
+function PaymentStep({ movie }) {
   const { state, dispatch } = useCinemaBooking();
   const total = cinemaTotal(state);
-  const canPay = state.card.number.replace(/\s/g, '').length >= 12 && state.card.name && state.card.expiry && state.card.cvv;
-
-  const handlePay = () => {
-    dispatch({ type: 'START_SUBMIT' });
-    setTimeout(() => dispatch({ type: 'SUBMIT_SUCCESS' }), 1500);
-  };
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div>
       <h2 className="font-display text-2xl text-emerald-900 mb-6 text-center">Payment</h2>
-      <MockPaymentCard card={state.card} onChange={(card) => dispatch({ type: 'SET_CARD', payload: card })} />
-      <div className="flex items-center justify-between mt-8">
+      <PaystackCheckout
+        amountNaira={total}
+        email={state.guest.email}
+        name={state.guest.name}
+        phone={state.guest.phone}
+        metadata={{ type: 'cinema', movie: movie.title, showtime: state.showtime, seats: state.selectedSeats.join(',') }}
+        onVerified={({ reference }) => dispatch({ type: 'SUBMIT_SUCCESS', payload: { reference } })}
+      />
+      <div className="flex justify-center mt-6">
         <Button variant="ghost" onClick={() => dispatch({ type: 'GO_BACK' })}><ArrowLeft className="h-4 w-4" /> Back</Button>
-        <Button disabled={!canPay} loading={state.submitting} onClick={handlePay} variant="gold">
-          Pay {formatCurrency(total)}
-        </Button>
       </div>
     </div>
   );
@@ -255,7 +253,7 @@ function Wizard({ movie }) {
           {state.step === 1 && <SeatsStep movie={movie} />}
           {state.step === 2 && <RefreshmentsStep />}
           {state.step === 3 && <GuestDetailsStep />}
-          {state.step === 4 && <PaymentStep />}
+          {state.step === 4 && <PaymentStep movie={movie} />}
           {state.step === 5 && <ConfirmationStep movie={movie} />}
         </motion.div>
       </AnimatePresence>

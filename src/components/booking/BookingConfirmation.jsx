@@ -46,7 +46,7 @@ export default function BookingConfirmation({ reference, title, subtitle, rows, 
       </div>
 
       <p className="text-xs text-stone-400 mt-6">
-        This is a demonstration booking. No email has been sent and no payment was taken.
+        Your payment was processed securely by Paystack. No confirmation email is sent from this demo site.
       </p>
 
       <Button as={Link} to="/" variant="outline" className="mt-6">

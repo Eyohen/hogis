@@ -1,5 +1,4 @@
 import { createContext, useContext, useReducer } from 'react';
-import { generateBookingReference } from '../lib/format';
 
 const CinemaBookingContext = createContext(null);
 
@@ -11,8 +10,6 @@ const initialState = (movie, initialDate, initialShowtime) => ({
   selectedSeats: [],
   refreshments: {},
   guest: { name: '', email: '', phone: '' },
-  card: { number: '', name: '', expiry: '', cvv: '', flip: false },
-  submitting: false,
   reference: null,
 });
 
@@ -39,16 +36,12 @@ function reducer(state, action) {
     }
     case 'SET_GUEST_FIELD':
       return { ...state, guest: { ...state.guest, [action.field]: action.value } };
-    case 'SET_CARD':
-      return { ...state, card: action.payload };
     case 'GO_NEXT':
       return { ...state, step: state.step + 1 };
     case 'GO_BACK':
       return { ...state, step: Math.max(0, state.step - 1) };
-    case 'START_SUBMIT':
-      return { ...state, submitting: true };
     case 'SUBMIT_SUCCESS':
-      return { ...state, submitting: false, reference: generateBookingReference('CIN'), step: state.step + 1 };
+      return { ...state, reference: action.payload.reference, step: state.step + 1 };
     default:
       return state;
   }

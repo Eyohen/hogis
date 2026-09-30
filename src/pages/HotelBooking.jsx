@@ -8,7 +8,7 @@ import { formatCurrency } from '../lib/format';
 import { HotelBookingProvider, useHotelBooking } from '../context/HotelBookingContext';
 import StepIndicator from '../components/ui/StepIndicator';
 import RangeCalendar from '../components/booking/RangeCalendar';
-import MockPaymentCard from '../components/booking/MockPaymentCard';
+import PaystackCheckout from '../components/booking/PaystackCheckout';
 import BookingConfirmation from '../components/booking/BookingConfirmation';
 import Button from '../components/ui/Button';
 
@@ -138,26 +138,24 @@ function GuestDetailsStep() {
   );
 }
 
-function PaymentStep({ room }) {
+function PaymentStep({ hotel, room }) {
   const { state, dispatch } = useHotelBooking();
   const nights = differenceInCalendarDays(state.dateRange.end, state.dateRange.start);
   const total = nights * room.pricePerNight * state.occupancy.rooms;
-  const canPay = state.card.number.replace(/\s/g, '').length >= 12 && state.card.name && state.card.expiry && state.card.cvv;
-
-  const handlePay = () => {
-    dispatch({ type: 'START_SUBMIT' });
-    setTimeout(() => dispatch({ type: 'SUBMIT_SUCCESS' }), 1500);
-  };
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div>
       <h2 className="font-display text-2xl text-emerald-900 mb-6 text-center">Payment</h2>
-      <MockPaymentCard card={state.card} onChange={(card) => dispatch({ type: 'SET_CARD', payload: card })} />
-      <div className="flex items-center justify-between mt-8">
+      <PaystackCheckout
+        amountNaira={total}
+        email={state.guest.email}
+        name={state.guest.name}
+        phone={state.guest.phone}
+        metadata={{ type: 'hotel', hotel: hotel.name, room: room.name, nights, rooms: state.occupancy.rooms }}
+        onVerified={({ reference }) => dispatch({ type: 'SUBMIT_SUCCESS', payload: { reference } })}
+      />
+      <div className="flex justify-center mt-6">
         <Button variant="ghost" onClick={() => dispatch({ type: 'GO_BACK' })}><ArrowLeft className="h-4 w-4" /> Back</Button>
-        <Button disabled={!canPay} loading={state.submitting} onClick={handlePay} variant="gold">
-          Pay {formatCurrency(total)}
-        </Button>
       </div>
     </div>
   );
@@ -205,7 +203,7 @@ function Wizard({ hotel, room }) {
         >
           {state.step === 0 && <DatesStep hotel={hotel} room={room} />}
           {state.step === 1 && <GuestDetailsStep />}
-          {state.step === 2 && <PaymentStep room={room} />}
+          {state.step === 2 && <PaymentStep hotel={hotel} room={room} />}
           {state.step === 3 && <ConfirmationStep hotel={hotel} room={room} />}
         </motion.div>
       </AnimatePresence>

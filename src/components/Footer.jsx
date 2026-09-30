@@ -54,7 +54,7 @@ export default function Footer() {
       <div className="border-t border-cream-100/10">
         <div className="container-page py-6 text-xs text-cream-100/40 flex flex-col sm:flex-row justify-between gap-2">
           <p>&copy; {new Date().getFullYear()} Hogis Group. All rights reserved.</p>
-          <p>Booking flows shown are a demonstration and do not process real payments.</p>
+          <p>Payments are processed securely by Paystack.</p>
         </div>
       </div>
     </footer>
