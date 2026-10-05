@@ -1,9 +1,12 @@
+import ikeHenryPhoto from '../assets/Ike-Henry.jpeg';
+
 export const TEAM = [
   {
     tier: 'Leadership',
     name: 'Dr. Ikechukwu Henry Ukweh',
     role: 'Group Managing Director',
     credentials: 'MBBCH, MBA, FMCPH, PHD, KSC',
+    photo: ikeHenryPhoto,
   },
   {
     tier: 'Leadership',

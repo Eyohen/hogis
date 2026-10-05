@@ -10,9 +10,17 @@ function TeamCard({ person, i }) {
       transition={{ delay: i * 0.08 }}
       className="rounded-2xl bg-white shadow-soft p-6 text-center"
     >
-      <div className="h-20 w-20 rounded-full bg-emerald-900 text-cream-50 font-display text-2xl flex items-center justify-center mx-auto">
-        {initials(person.name)}
-      </div>
+      {person.photo ? (
+        <img
+          src={person.photo}
+          alt={person.name}
+          className="h-20 w-20 rounded-full object-cover mx-auto"
+        />
+      ) : (
+        <div className="h-20 w-20 rounded-full bg-emerald-900 text-cream-50 font-display text-2xl flex items-center justify-center mx-auto">
+          {initials(person.name)}
+        </div>
+      )}
       <h3 className="font-display text-lg text-emerald-900 mt-4">{person.name}</h3>
       <p className="text-sm text-gold-600 font-medium mt-1">{person.role}</p>
       {person.credentials && <p className="text-xs text-stone-400 mt-2">{person.credentials}</p>}
