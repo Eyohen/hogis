@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { HOTELS } from '../data/hotels';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
 
@@ -25,8 +26,12 @@ export default function Contact() {
           </p>
 
           <ul className="mt-10 space-y-4 text-stone-600">
-            <li className="flex items-center gap-3"><MapPin className="h-5 w-5 text-emerald-900" /> Calabar, Nigeria</li>
-            <li className="flex items-center gap-3"><Phone className="h-5 w-5 text-emerald-900" /> +234 800 000 0000</li>
+            <li className="flex items-center gap-3"><MapPin className="h-5 w-5 text-emerald-900" /> Calabar, Cross River State, Nigeria</li>
+            {HOTELS.map((h) => (
+              <li key={h.slug} className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-emerald-900" /> {h.name}: {h.phone}
+              </li>
+            ))}
             <li className="flex items-center gap-3"><Mail className="h-5 w-5 text-emerald-900" /> hello@hogisgroup.com</li>
           </ul>
         </div>

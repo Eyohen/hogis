@@ -14,9 +14,9 @@ export default function Cinema() {
         <img src={IMAGES.cinemaHall} alt="Hogis Cinema" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/90 via-charcoal-950/40 to-transparent" />
         <div className="container-page relative z-10 pb-14 text-cream-50">
-          <Badge variant="gold" className="mb-4">Hogis Royale</Badge>
+          <Badge variant="gold" className="mb-4">Hogis Royale and Apartments</Badge>
           <h1 className="font-display text-4xl sm:text-5xl">Hogis Cinema</h1>
-          <p className="mt-3 text-cream-100/70 max-w-md">Now showing at Hogis Royale — pick a film to see today&rsquo;s times.</p>
+          <p className="mt-3 text-cream-100/70 max-w-md">Now showing at Hogis Royale and Apartments — pick a film to see today&rsquo;s times.</p>
         </div>
       </section>
 

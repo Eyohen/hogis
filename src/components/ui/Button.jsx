@@ -5,6 +5,7 @@ const VARIANTS = {
   solid: 'bg-emerald-900 text-cream-50',
   gold: 'bg-gold-500 text-charcoal-950 hover:bg-gold-400',
   outline: 'border border-emerald-900 text-emerald-900 hover:bg-emerald-900 hover:text-cream-50',
+  outlineLight: 'border border-cream-50 text-cream-50 hover:bg-cream-50 hover:text-charcoal-950',
   ghost: 'text-emerald-900 hover:bg-emerald-900/5',
   goldOutline: 'border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-charcoal-950',
 };

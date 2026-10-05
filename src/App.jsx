@@ -10,6 +10,9 @@ import MovieDetail from './pages/MovieDetail';
 import CinemaBooking from './pages/CinemaBooking';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Careers from './pages/Careers';
+import Team from './pages/Team';
+import GymRegister from './pages/GymRegister';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -27,6 +30,9 @@ function App() {
           <Route path="/cinema/book" element={<CinemaBooking />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/gym-register" element={<GymRegister />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

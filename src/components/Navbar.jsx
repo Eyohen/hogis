@@ -87,6 +87,8 @@ export default function Navbar() {
               <Clapperboard className="h-3.5 w-3.5" /> Cinema
             </span>
           </NavLink>
+          <NavLink to="/careers" className={(s) => navLinkClass(s, light)}>Careers</NavLink>
+          <NavLink to="/team" className={(s) => navLinkClass(s, light)}>Team</NavLink>
           <NavLink to="/about" className={(s) => navLinkClass(s, light)}>About</NavLink>
           <NavLink to="/contact" className={(s) => navLinkClass(s, light)}>Contact</NavLink>
         </div>
@@ -127,6 +129,8 @@ export default function Navbar() {
               ))}
               <div className="h-px bg-stone-200 my-2" />
               <Link to="/cinema" className="text-emerald-900 font-display text-lg">Cinema</Link>
+              <Link to="/careers" className="text-emerald-900 font-display text-lg">Careers</Link>
+              <Link to="/team" className="text-emerald-900 font-display text-lg">Team</Link>
               <Link to="/about" className="text-emerald-900 font-display text-lg">About</Link>
               <Link to="/contact" className="text-emerald-900 font-display text-lg">Contact</Link>
               <Link to="/hotels" className="mt-2 rounded-full bg-emerald-900 text-cream-50 text-center py-3 font-semibold">

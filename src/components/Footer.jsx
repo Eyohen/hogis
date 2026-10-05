@@ -11,7 +11,7 @@ export default function Footer() {
             Hogis <span className="text-gold-400">Group</span>
           </p>
           <p className="mt-4 text-sm text-cream-100/60 leading-relaxed">
-            Three hotels, one standard of hospitality — plus the city&rsquo;s favorite cinema, at Hogis Royale.
+            Three hotels, one standard of hospitality — plus the city&rsquo;s favorite cinema, at Hogis Royale and Apartments.
           </p>
           <div className="mt-6 flex gap-4">
             <Instagram className="h-5 w-5 text-cream-100/60 hover:text-gold-400 cursor-pointer transition-colors" />
@@ -37,6 +37,8 @@ export default function Footer() {
           <p className="text-xs uppercase tracking-wider text-gold-400 mb-4">Explore</p>
           <ul className="space-y-3 text-sm text-cream-100/70">
             <li><Link to="/cinema" className="hover:text-cream-50 transition-colors">Cinema</Link></li>
+            <li><Link to="/careers" className="hover:text-cream-50 transition-colors">Careers</Link></li>
+            <li><Link to="/team" className="hover:text-cream-50 transition-colors">Team</Link></li>
             <li><Link to="/about" className="hover:text-cream-50 transition-colors">About Us</Link></li>
             <li><Link to="/contact" className="hover:text-cream-50 transition-colors">Contact</Link></li>
           </ul>
@@ -45,8 +47,12 @@ export default function Footer() {
         <div>
           <p className="text-xs uppercase tracking-wider text-gold-400 mb-4">Get in touch</p>
           <ul className="space-y-3 text-sm text-cream-100/70">
-            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0" /> Calabar, Nigeria</li>
-            <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0" /> +234 800 000 0000</li>
+            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 shrink-0" /> Calabar, Cross River State, Nigeria</li>
+            {HOTELS.map((h) => (
+              <li key={h.slug} className="flex items-center gap-2">
+                <Phone className="h-4 w-4 shrink-0" /> {h.name}: {h.phone}
+              </li>
+            ))}
             <li className="flex items-center gap-2"><Mail className="h-4 w-4 shrink-0" /> hello@hogisgroup.com</li>
           </ul>
         </div>

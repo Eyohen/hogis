@@ -24,14 +24,20 @@ export const IMAGES = {
 
   lounge: img('1560347876-aeef00ee58a1'),
   vipLounge: img('1522708323590-d24dbb6b0267'),
+  clubLounge: img('1543007630-9710e4a00a20'), // bar/lounge interior
 
-  cinemaSeats: img('1543007630-9710e4a00a20'),
   cinemaScreen: img('1489599849927-2ee91cede3ba'),
   cinemaHall: img('1517604931442-7e0c8ed2963c'),
 
   banquetHall: img('1440404653325-ab127d49abc1'),
   gamesArcade: img('1550966871-3ed3cdb5ed0c'),
   gamesArcadeAlt: img('1519167758481-83f550bb49b3'),
+
+  gym: img('1540497077202-7c8a3999166f'),
+  spa: img('1570172619644-dfd03ed5d881'),
+  cafe: img('1495474472287-4d71bcdd2085'),
+  barbershop: img('1585747860715-2ba37e788b70'),
+  rooftop: img('1540541338287-41700207dee6'),
 
   // Movie poster photography (real photos, not fabricated posters — these
   // are original fictional titles, so we avoid implying any real film).

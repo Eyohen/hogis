@@ -5,16 +5,22 @@ import { hashString, mulberry32 } from '../lib/prng';
 export const HOTELS = [
   {
     slug: 'hogis-luxury',
-    name: 'Hogis Luxury',
+    name: 'Hogis Luxury Suites',
     tagline: 'Serene stays, elevated living',
+    phone: '0813 957 7321',
     heroImage: IMAGES.poolExterior,
     description:
-      "Hogis Luxury is our tranquil flagship retreat — built for guests who want a hotel that feels like an escape. Unwind by the pool, catch up on work from the lounge, or slip into the VIP lounge for a quieter evening.",
+      "Hogis Luxury Suites is our tranquil flagship retreat — built for guests who want a hotel that feels like an escape. Unwind by the pool, work out in the gym, or slip into the Voltage Lounge for a quieter evening.",
+    features: ['Rooms', 'Restaurant', 'Swimming Pool', 'Business & VIP Lounge', 'Fitness (Gym)', 'Voltage Lounge', 'Café', 'Barbershop', 'Hall'],
     amenities: [
       { name: 'Swimming Pool', icon: 'Waves', image: IMAGES.pool },
-      { name: 'Lounge', icon: 'Sofa', image: IMAGES.lounge },
-      { name: 'VIP Lounge', icon: 'Sparkles', image: IMAGES.vipLounge },
       { name: 'Restaurant', icon: 'UtensilsCrossed', image: IMAGES.restaurant },
+      { name: 'Business & VIP Lounge', icon: 'Briefcase', image: IMAGES.vipLounge },
+      { name: 'Fitness (Gym)', icon: 'Dumbbell', image: IMAGES.gym },
+      { name: 'Voltage Lounge', icon: 'Zap', image: IMAGES.lounge },
+      { name: 'Café', icon: 'Coffee', image: IMAGES.cafe },
+      { name: 'Barbershop', icon: 'Scissors', image: IMAGES.barbershop },
+      { name: 'Hall', icon: 'Building2', image: IMAGES.banquetHall },
     ],
     rooms: [
       {
@@ -51,18 +57,20 @@ export const HOTELS = [
   },
   {
     slug: 'hogis-royale',
-    name: 'Hogis Royale',
+    name: 'Hogis Royale and Apartments',
     tagline: 'Where every night is an event',
+    phone: '0707 353 6464',
     heroImage: IMAGES.heroExteriorNight,
     description:
-      "Hogis Royale is the group's entertainment flagship — home to the Hogis Cinema, a lively club, a games arcade, and a banquet hall for the city's biggest celebrations. Stay for the rooms, come alive for everything else.",
+      "Hogis Royale and Apartments is the group's entertainment flagship — home to Hogis Cinema, Club Voltage, a games arcade, and a grill lounge for the city's biggest nights out. Stay for the rooms, come alive for everything else.",
+    features: ['Rooms', 'Restaurant', 'Hall', 'Club Voltage', 'Games Arcade', 'Cinema', 'Grill Lounge (Indoor/Outdoor)'],
     amenities: [
       { name: 'Cinema', icon: 'Clapperboard', image: IMAGES.cinemaHall },
-      { name: 'Club', icon: 'PartyPopper', image: IMAGES.lounge },
+      { name: 'Club Voltage', icon: 'PartyPopper', image: IMAGES.clubLounge },
       { name: 'Games Arcade', icon: 'Gamepad2', image: IMAGES.gamesArcade },
       { name: 'Restaurant', icon: 'UtensilsCrossed', image: IMAGES.restaurantDining },
-      { name: 'Banquet Hall', icon: 'PartyPopper', image: IMAGES.banquetHall },
-      { name: 'Lounge', icon: 'Sofa', image: IMAGES.vipLounge },
+      { name: 'Grill Lounge (Indoor/Outdoor)', icon: 'Flame', image: IMAGES.restaurantAlt },
+      { name: 'Hall', icon: 'Building2', image: IMAGES.banquetHall },
     ],
     rooms: [
       {
@@ -101,12 +109,14 @@ export const HOTELS = [
     slug: 'hogis-kings-court',
     name: 'Hogis Kings Court',
     tagline: 'Understated comfort, done right',
+    phone: '0810 951 6906',
     heroImage: IMAGES.exterior,
     description:
-      "Hogis Kings Court keeps things simple: comfortable rooms, a relaxed lounge, and a restaurant worth staying in for. A quieter option for guests who want Hogis hospitality without the crowd.",
+      "Hogis Kings Court keeps things simple: comfortable rooms, a relaxed restaurant/lounge, and a rooftop worth staying in for. A quieter option for guests who want Hogis hospitality without the crowd.",
+    features: ['Rooms', 'Restaurant/Lounge', 'Rooftop'],
     amenities: [
-      { name: 'Lounge', icon: 'Sofa', image: IMAGES.lounge },
-      { name: 'Restaurant', icon: 'UtensilsCrossed', image: IMAGES.restaurantAlt },
+      { name: 'Restaurant/Lounge', icon: 'UtensilsCrossed', image: IMAGES.restaurantAlt },
+      { name: 'Rooftop', icon: 'Sunset', image: IMAGES.rooftop },
     ],
     rooms: [
       {

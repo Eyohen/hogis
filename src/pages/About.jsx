@@ -17,9 +17,9 @@ export default function About() {
 
       <section className="container-page py-16">
         <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="max-w-2xl text-lg text-stone-600 leading-relaxed">
-          Hogis Group brings together three distinct hotels under one standard of hospitality — and, at Hogis Royale,
-          the city&rsquo;s favorite cinema, club, and games arcade. Whether you&rsquo;re booking a quiet weekend or a night out,
-          we&rsquo;ve built a Hogis experience for it.
+          Hogis Group brings together three distinct hotels under one standard of hospitality — and, at Hogis Royale
+          and Apartments, the city&rsquo;s favorite cinema, club, and games arcade. Whether you&rsquo;re booking a quiet weekend
+          or a night out, we&rsquo;ve built a Hogis experience for it.
         </motion.p>
 
         <div className="mt-14 grid gap-8 sm:grid-cols-3">

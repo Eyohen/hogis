@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Waves, Sofa, Sparkles, UtensilsCrossed, Clapperboard, PartyPopper, Gamepad2,
+  Dumbbell, Zap, Coffee, Scissors, Building2, Flame, Sunset, Briefcase,
   Users, Maximize, ArrowRight,
 } from 'lucide-react';
 import { getHotelBySlug } from '../data/hotels';
@@ -10,7 +11,10 @@ import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
 
-const ICONS = { Waves, Sofa, Sparkles, UtensilsCrossed, Clapperboard, PartyPopper, Gamepad2 };
+const ICONS = {
+  Waves, Sofa, Sparkles, UtensilsCrossed, Clapperboard, PartyPopper, Gamepad2,
+  Dumbbell, Zap, Coffee, Scissors, Building2, Flame, Sunset, Briefcase,
+};
 
 export default function HotelDetail() {
   const { slug } = useParams();
