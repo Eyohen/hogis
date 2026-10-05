@@ -1,4 +1,4 @@
-import ikeHenryPhoto from '../assets/Ike-Henry.jpeg';
+import ikeHenryPhoto from '../assets/Ike-Henry-headshot.jpg';
 
 export const TEAM = [
   {
