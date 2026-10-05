@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, Clapperboard } from 'lucide-react';
 import { HOTELS } from '../data/hotels';
+import { IMAGES } from '../data/images';
 
 const navLinkClass = ({ isActive }, light) =>
   [
@@ -40,11 +41,8 @@ export default function Navbar() {
       ].join(' ')}
     >
       <nav className="container-page flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <span className={['font-display text-2xl font-semibold tracking-tight', light ? 'text-cream-50' : 'text-emerald-900'].join(' ')}>
-            Hogis
-          </span>
-          <span className={['text-2xl font-display', light ? 'text-gold-400' : 'text-gold-500'].join(' ')}>Group</span>
+        <Link to="/" className="flex items-center">
+          <img src={IMAGES.logo} alt="Hogis Group" className="h-12 w-auto" />
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">

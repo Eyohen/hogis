@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Twitter, MapPin, Phone, Mail } from 'lucide-react';
 import { HOTELS } from '../data/hotels';
+import { IMAGES } from '../data/images';
 
 export default function Footer() {
   return (
     <footer className="bg-charcoal-950 text-cream-100">
       <div className="container-page py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="font-display text-2xl">
-            Hogis <span className="text-gold-400">Group</span>
-          </p>
+          <img src={IMAGES.logo} alt="Hogis Group" className="h-14 w-auto" />
           <p className="mt-4 text-sm text-cream-100/60 leading-relaxed">
             Three hotels, one standard of hospitality — plus the city&rsquo;s favorite cinema, at Hogis Royale and Apartments.
           </p>

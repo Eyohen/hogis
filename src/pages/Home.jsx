@@ -8,7 +8,6 @@ import AmenitiesCarousel from '../components/AmenitiesCarousel';
 import Button from '../components/ui/Button';
 import Badge from '../components/ui/Badge';
 import Card from '../components/ui/Card';
-import heroImage from '../assets/HogisRoyaleBuilding.jpg';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -23,7 +22,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative h-[92vh] min-h-[620px] flex items-end">
         <img
-          src={heroImage}
+          src={IMAGES.royaleBuilding}
           alt="Hogis Royale and Apartments building exterior"
           className="absolute inset-0 h-full w-full object-cover"
         />

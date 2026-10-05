@@ -8,7 +8,7 @@ export const HOTELS = [
     name: 'Hogis Luxury Suites',
     tagline: 'Serene stays, elevated living',
     phone: '0813 957 7321',
-    heroImage: IMAGES.poolExterior,
+    heroImage: IMAGES.luxuryBuilding,
     description:
       "Hogis Luxury Suites is our tranquil flagship retreat — built for guests who want a hotel that feels like an escape. Unwind by the pool, work out in the gym, or slip into the Voltage Lounge for a quieter evening.",
     features: ['Rooms', 'Restaurant', 'Swimming Pool', 'Business & VIP Lounge', 'Fitness (Gym)', 'Voltage Lounge', 'Café', 'Barbershop', 'Hall'],
@@ -60,7 +60,7 @@ export const HOTELS = [
     name: 'Hogis Royale and Apartments',
     tagline: 'Where every night is an event',
     phone: '0707 353 6464',
-    heroImage: IMAGES.heroExteriorNight,
+    heroImage: IMAGES.royaleBuilding,
     description:
       "Hogis Royale and Apartments is the group's entertainment flagship — home to Hogis Cinema, Club Voltage, a games arcade, and a grill lounge for the city's biggest nights out. Stay for the rooms, come alive for everything else.",
     features: ['Rooms', 'Restaurant', 'Hall', 'Club Voltage', 'Games Arcade', 'Cinema', 'Grill Lounge (Indoor/Outdoor)'],
